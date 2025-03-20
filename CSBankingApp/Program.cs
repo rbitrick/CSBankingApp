@@ -1,7 +1,7 @@
 ﻿
 
 
-static void Get_Balance(int balance)
+static void Get_Balance(float balance)
 {
     Console.WriteLine("****************");
     Console.WriteLine("Your balance is $" + balance);
@@ -9,19 +9,27 @@ static void Get_Balance(int balance)
 
 }
 
-static void Deposit()
+static float Deposit()
 {
     Console.WriteLine("****************");
     Console.WriteLine("Please enter an amount to deposit");
-    float amount = float.Parse(Console.ReadLine());
     Console.WriteLine("****************");
-
+    float amount = float.Parse(Console.ReadLine());
+    return amount;
+}
+static float Withdraw(float balance)
+{
+    Console.WriteLine("****************");
+    Console.WriteLine("Please enter an amount to withdraw");
+    Console.WriteLine("****************");
+    float amount = float.Parse(Console.ReadLine());
+    return amount;
 }
 
 
 static void Main(string[] args)
 {
-    int balance = 0;
+    float balance = 0;
     bool is_running = true;
 
     while (is_running)
@@ -36,13 +44,17 @@ static void Main(string[] args)
         Console.WriteLine("Please enter an option (1-4): ");
         string choice = Console.ReadLine();
 
-        if (choice == "1") 
+        if (choice == "1")
         {
             Get_Balance(balance);
         }
         else if (choice == "2")
         {
             balance += Deposit();
+        }
+        else if (choice == "3")
+        {
+            balance -= Withdraw(balance);
         }
 
     }
