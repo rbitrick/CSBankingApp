@@ -4,7 +4,7 @@
 static void Get_Balance(float balance)
 {
     Console.WriteLine("****************");
-    Console.WriteLine("Your balance is $" + balance);
+    Console.WriteLine("Your balance is " + balance.ToString("c2"));
     Console.WriteLine("****************");
 
 }
@@ -102,7 +102,11 @@ static void Main()
         {
             balance -= Withdraw(balance);
         }
-
+        else if (choice == "4")
+        {
+            Console.WriteLine("Thank you! Come again!");
+            is_running = false;
+        }
     }
 }
 
