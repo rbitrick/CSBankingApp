@@ -3,18 +3,23 @@
 
 static void Get_Balance(float balance)
 {
+    Console.Clear();
+
     Console.WriteLine("****************");
     Console.WriteLine("Your balance is " + balance.ToString("c2"));
     Console.WriteLine("****************");
+    Console.WriteLine("Please press enter to continue");
+    Console.ReadKey();
 
 }
 
 static float Deposit()
 {
+    Console.Clear();
+
     bool validoption = false;
     while (validoption != true)
     {
-
         Console.WriteLine("****************");
         Console.WriteLine("Please enter an amount to deposit");
         Console.WriteLine("****************");
@@ -40,9 +45,12 @@ static float Deposit()
 }
 static float Withdraw(float balance)
 {
+    Console.Clear();
+
     bool validoption = false;
     while (validoption != true)
     {
+
         Console.WriteLine("****************");
         Console.WriteLine("Please enter an amount to withdraw");
         Console.WriteLine("****************");
@@ -78,8 +86,11 @@ static void Main()
     float balance = 0;
     bool is_running = true;
 
+
     while (is_running)
     {
+        Console.Clear();
+
         Console.WriteLine("****************");
         Console.WriteLine("Welcome to Banking App in C#");
         Console.WriteLine("****************");
