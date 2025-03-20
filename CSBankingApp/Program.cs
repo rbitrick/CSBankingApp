@@ -11,23 +11,69 @@ static void Get_Balance(float balance)
 
 static float Deposit()
 {
-    Console.WriteLine("****************");
-    Console.WriteLine("Please enter an amount to deposit");
-    Console.WriteLine("****************");
-    float amount = float.Parse(Console.ReadLine());
-    return amount;
+    bool validoption = false;
+    while (validoption != true)
+    {
+
+        Console.WriteLine("****************");
+        Console.WriteLine("Please enter an amount to deposit");
+        Console.WriteLine("****************");
+        float amount = float.Parse(Console.ReadLine());
+
+        if (amount < 0)
+        {
+            Console.WriteLine("Invalid option: " + amount);
+            continue;
+        }
+        else if (amount == 0)
+        {
+            return 0;
+        }
+        else
+        {
+            validoption = true;
+            return amount;
+        }
+    }
+    return 0;
+
 }
 static float Withdraw(float balance)
 {
-    Console.WriteLine("****************");
-    Console.WriteLine("Please enter an amount to withdraw");
-    Console.WriteLine("****************");
-    float amount = float.Parse(Console.ReadLine());
-    return amount;
+    bool validoption = false;
+    while (validoption != true)
+    {
+        Console.WriteLine("****************");
+        Console.WriteLine("Please enter an amount to withdraw");
+        Console.WriteLine("****************");
+        float amount = float.Parse(Console.ReadLine());
+
+        if (amount > balance)
+        {
+            Console.WriteLine("Insufficent Funds");
+            continue;
+        }
+        else if (amount < 0)
+        {
+            Console.WriteLine("Invalid option: " + amount);
+            continue;
+        }
+        else if (amount == 0)
+        {
+            return 0;
+        }
+        else
+        {
+            validoption = true;
+            return amount;
+        }
+    }
+    return 0;
+
 }
 
 
-static void Main(string[] args)
+static void Main()
 {
     float balance = 0;
     bool is_running = true;
@@ -59,3 +105,5 @@ static void Main(string[] args)
 
     }
 }
+
+Main();
