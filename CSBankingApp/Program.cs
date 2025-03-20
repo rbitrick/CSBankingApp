@@ -12,7 +12,8 @@ static void Get_Balance(int balance)
 static void Deposit()
 {
     Console.WriteLine("****************");
-    Console.WriteLine("Your balance is $" + balance);
+    Console.WriteLine("Please enter an amount to deposit");
+    float amount = float.Parse(Console.ReadLine());
     Console.WriteLine("****************");
 
 }
